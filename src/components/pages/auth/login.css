@@ -1,0 +1,233 @@
+.auth-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background: #0a1857;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.auth-container::-webkit-scrollbar {
+  width: 1px !important;
+}
+
+.auth-container::-webkit-scrollbar {
+  opacity: 0 !important;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .login-logo svg {
+  width: 200 !important;
+} */
+
+.login-container {
+  background: #f7fafc;
+  border: 0.5px solid #c5c7cd;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 24px rgba(11, 58, 92, 0.1);
+  border-radius: 10px;
+  width: 450px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 30px;
+  padding: 40px 30px 30px 40px;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 30px;
+}
+
+.Auth-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.Auth-header h3 {
+  letter-spacing: 0.03em;
+  color: #000000;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.Auth-header p {
+  color: rgba(89, 89, 89, 0.6);
+  font-size: 15px;
+  padding-top: 7px;
+}
+
+.input-main-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.input-wrap:first-child {
+  padding-top: 0;
+}
+.input-wrap {
+  padding-top: 15px;
+}
+
+.input-wrap {
+  position: relative;
+}
+.input-wrap input {
+  width: 96%;
+  background: rgba(214, 214, 214, 0.3);
+  border: 0.5px solid #d6d6d6;
+  border-radius: 5px;
+  height: 45px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 5px !important;
+  font-size: 13px;
+  outline: none;
+  padding-left: 8px;
+}
+.input-wrap-with-two-inputes {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6px;
+}
+
+.inputWrapTwo {
+  width: 100%;
+}
+
+.inputWrapTwo input {
+  width: 96%;
+  background: rgba(214, 214, 214, 0.3);
+  border: 0.5px solid #d6d6d6;
+  border-radius: 5px;
+  height: 45px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 5px !important;
+  font-size: 13px;
+  padding-left: 7px;
+  outline: none;
+}
+.input-wrap label {
+  font-size: 14px;
+  line-height: 19px;
+  padding-bottom: 10px;
+  color: #000000;
+}
+
+.inputWrapTwo label {
+  font-size: 14px;
+  line-height: 19px;
+  padding-bottom: 10px;
+  color: #000000;
+}
+
+.passworEye {
+  position: relative;
+}
+
+.passworEye img {
+  width: 15px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.haveAnAccou {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 3px;
+  font-size: 19px;
+}
+
+.haveAnAccou a {
+  color: #0067dd;
+  font-size: 11px;
+}
+
+.submit-auth-btn {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.submit-auth-btn button {
+  width: 100%;
+  background: #0a1857;
+  border-radius: 5px;
+  height: 45.8px;
+  color: white;
+  font-size: 16px;
+  margin-top: 40px;
+  cursor: pointer;
+  border: none;
+}
+
+.symbol-wrap {
+  position: fixed;
+  bottom: 0;
+  right: 0px;
+  z-index: 1;
+}
+
+.symbol-wrap2 {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  z-index: 1;
+}
+
+.symbol-wrap2 img {
+  width: 200px;
+}
+.symbol-wrap img {
+  width: 300px;
+}
+
+@media (max-width: 526px) {
+  .login-container {
+    width: 90vw;
+  }
+  .input-wrap-with-two-inputes {
+    flex-direction: column;
+  }
+
+  .inputWrapTwo {
+    padding-bottom: 8px;
+  }
+
+  .inputWrapTwo input {
+    width: 100%;
+  }
+  .login-container {
+    padding: 40px 25px 30px 25px;
+  }
+}
+.forgotPasswordOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPasswordOption p {
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.forgotPasswordOption svg {
+  padding-right: 12px;
+  position: relative;
+  top: 5px;
+}

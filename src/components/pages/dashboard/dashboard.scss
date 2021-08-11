@@ -1,0 +1,154 @@
+.dashboard {
+  // background-color: #e5e5e5;
+  max-height: 100vh;
+  width: 100%;
+  padding-top: 30px;
+  // padding-left: 118px;
+  // padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  p {
+    margin: 0px;
+  }
+
+  .greeting {
+    position: absolute;
+    top: -16px;
+    color: #000080;
+  }
+  .charts {
+    width: 65%;
+    box-sizing: border-box;
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+    .pie-chart {
+      &:first-child {
+        .circular-progress {
+          transform: translateY(10px);
+        }
+      }
+      width: 49%;
+      min-height: 100%;
+    }
+  }
+  .side-bar {
+    width: 35%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column !important;
+    .progress-bars {
+      // margin-bottom: 30px;
+      padding: 20px 35px;
+      background: #f9fcff;
+      border: 1px solid #dadada80;
+      border-radius: 10.4866px;
+      .top-section {
+        margin-bottom: 10px;
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+    // .progress-bars {
+    //   width: 100%;
+    //   height: fit-content;
+    // }
+    .top-bar {
+      width: 100%;
+    }
+  }
+}
+
+
+.dashboardHomeCards{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.dashboardHomeCards .dashboardHomeCardsIn{
+  width: 35%;
+  height: 140px;
+  background-color: white;
+  margin-right: 12px;
+  border-radius: 5px;
+}
+
+.dashboardHomeCards .dashboardHomeCardsIn:last-child{
+  margin-right: 0px;
+}
+
+.dashboardBalance{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboardBalance button{
+  padding: 9px 20px;
+background: #E2E8F0;
+border: none;
+margin-bottom: 15px;
+height: 42px;
+border-radius: 5px;
+}
+
+.dashboardBalance h2{
+  font-size: 30px;
+}
+
+.dashboardHomeCardsIn{
+  display: flex;
+  align-items: center;
+  
+}
+
+.dashboardIconq1{
+  background-color: #6fcf9775 ;
+  margin-left: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+}
+
+.dashBordDatDeyj{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 20px;
+  height: 60%;
+
+}
+
+.dashBordDatDeyj h2{
+  font-size: 15px;
+  margin: 0;
+  color: #162A75;
+
+}
+
+.dashBordDatDeyj p{
+  font-size: 15px;
+  margin: 0;
+  color: #162A75;
+
+}
+
+.dashBordDatDeyj span{
+  font-size: 13px;
+  margin: 0;
+  color: #425393;
+
+}

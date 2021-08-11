@@ -1,0 +1,239 @@
+.settingstabWrap {
+  width: 100%;
+  height: 45px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 9px;
+}
+
+.settingstabWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingstabWrap ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.settingstabWrap ul li {
+  margin-right: 40px;
+  color: #425466;
+  font-size: 14px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  /* line-height: 20px; */
+}
+.activeTabSettings {
+  color: #0a1857 !important;
+}
+.settingstabWrap ul .activeTabSettings::after {
+  display: block;
+  content: "";
+  height: 4px;
+  background: #0a1857;
+  position: relative;
+  top: 13.5px;
+}
+.settingstabWrap ul li span {
+  position: relative;
+  top: 4px;
+}
+/* .settingstabWrap {} */
+.activeTabContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.profileWrap {
+  background-color: white;
+  width: 700px;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.pagenameProflPawa {
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.inputWrapPpPawa {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.inputWrapMainPawa {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.inputWrapMainPawa label {
+  margin-bottom: 8px;
+  font-size: 13px;
+  /* line-height: 28px; */
+  color: #000000;
+}
+
+.inputWrapMainPawa input {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  box-sizing: border-box;
+  width: 90%;
+  height: 40px;
+  border-radius: 3px;
+}
+
+.inputWrapMainPawa select {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  box-sizing: border-box;
+  width: 90%;
+  height: 45px;
+  border-radius: 3px;
+}
+
+.technicalSkillPpawa {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.technicalSkillPpawa input {
+  margin-left: 10px;
+}
+
+.changepassPawa2u {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.changepassPawa2u button {
+  background: #edf2f7;
+  height: 40px;
+  width: 140px;
+  border: none;
+  margin-left: 20px;
+  border-radius: 4px;
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.saveChangesBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.saveChangesBtn button {
+  background: #0a1857;
+  border-radius: 4px;
+  padding: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.selectProductPawasett {
+  display: flex;
+  margin-bottom: 25px;
+  /* align-items: center; */
+}
+
+.SelectHProduct {
+  margin-right: 130px;
+}
+
+.selPList1 {
+  width: 180px;
+}
+
+.selPList1 .chspin {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.selPList1 .chspin input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.selPList1 .chspin p {
+  margin-right: 10px;
+  color: #000000;
+  font-size: 14px;
+}
+.SelectHProduct p {
+  white-space: nowrap;
+  color: #000000;
+  font-size: 14px;
+}
+
+.teamsSeactionSettings {
+  padding: 10px;
+  background-color: white;
+  margin-top: 30px;
+}
+
+.teamsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.teamsHeader .teamsBtnAction button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 3px;
+  margin-right: 10px;
+  border: none;
+}
+
+.cancelModalIcon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+.copyToClipSett {
+  position: relative;
+  cursor: pointer;
+}
+.copyToClipSett svg {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+  /* color: #e2e8f0; */
+  background-color: #e2e8f0;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 37px;
+  cursor: pointer;
+}
