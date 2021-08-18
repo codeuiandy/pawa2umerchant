@@ -2,8 +2,8 @@ import axios from 'axios';
 // import { hideLoader } from '../helpers/loader';
 import { NotificationManager } from 'react-notifications';
 
-export let baseUrl ="https://c45f1f96b4e8.ngrok.io/api/v1";
-export let baseUrlMain ="https://c45f1f96b4e8.ngrok.io/api/v1";
+export let baseUrl ="https://api-dev.pawa2u.com/api/v1";
+export let baseUrlMain ="https://api-dev.pawa2u.com/api/v1";
 let token = localStorage.getItem("token")
 // const token = localStorage.getItem("DomainToken")
 

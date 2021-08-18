@@ -39,7 +39,7 @@ body code {
 }
 
 .MTableToolbar-title-9 {
-  display: none;
+  display: none !important;
 }
 .MTableToolbar-searchField-10 {
   position: absolute !important;
@@ -74,4 +74,9 @@ button {
   overflow: hidden;
   overflow-y: scroll;
   background-color: #e5e5e5;
+}
+
+input,
+select {
+  padding-left: 8px !important;
 }

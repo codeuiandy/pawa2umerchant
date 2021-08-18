@@ -1,0 +1,117 @@
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modalHeader p {
+  font-weight: 500;
+  font-size: 17px;
+  color: #000000;
+}
+
+.settlementForm {
+  width: 100%;
+}
+
+.inputWrapWa {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.inputWrapWa input {
+  width: 100%;
+  border: 1px solid #cccccc;
+  height: 45px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.inputWrapWa select {
+  width: 100%;
+  border: 1px solid #cccccc;
+  height: 45px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.inputWrapWa label {
+  font-size: 13px;
+  color: #000000;
+}
+
+.submitDataSe {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.submitDataSe button {
+  height: 45px;
+  width: 100%;
+  text-align: center;
+  background: #0a1857;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.settlePaw2uM {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.settlePaw2uM h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 27px;
+}
+
+.settlePaw2uM p {
+  font-size: 17px;
+  color: #000000;
+}
+
+.singleTransHeader {
+  text-align: center;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 25px;
+  margin-bottom: 15px;
+}
+
+.singleTransHeader p {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.singleTransHeader h2 {
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 8px;
+  color: #000000;
+}
+
+.singSdetail {
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.singSdetail p:nth-child(1) {
+  color: #425466;
+  font-size: 16px;
+}
+
+.singSdetail p:nth-child(2) {
+  color: #425466;
+  font-size: 14px !important;
+  font-weight: bold;
+}

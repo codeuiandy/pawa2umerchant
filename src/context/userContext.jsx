@@ -20,7 +20,7 @@ export const UserDataProvider = (props) => {
       setLoadingUser(false);
       // window.location.href = "/";
     } else {
-      // getUser(token);
+      getUser(token);
     }
   };
 

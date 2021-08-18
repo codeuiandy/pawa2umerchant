@@ -156,7 +156,7 @@ export default function Sidebar({ browserRouter, currentRoute }) {
             className={`${
               appReduceSidebarWidth === true ? "" : "moveAppLinksToCenter"
             }`}
-            onClick={() => browserRouter(`/tickets`)}
+            onClick={() => browserRouter(`/wallet`)}
           >
             {" "}
             <span style={{ marginRight: "20px", marginTop: "-4px" }}>

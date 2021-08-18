@@ -13,7 +13,7 @@ import Transactions from "./components/pages/Transactions/index";
 import ForgotPassword from "./components/pages/auth/forgotPassword";
 import ForgotPasswordMain from "./components/pages/auth/resetPasswordMain";
 import Settings from './components/pages/settings/index'
-
+import Wallet from './components/pages/wallet/index'
 import Demo from "./demo";
 
 const SiteRouter = () => {
@@ -43,6 +43,14 @@ const SiteRouter = () => {
               component={Transactions}
               pageName="Transactions"
             />
+
+<DefaultLayoutRoute
+              exact
+              path="/Wallet"
+              component={Wallet}
+              pageName="Wallet"
+            />
+            
               <DefaultLayoutRoute
               exact
               path="/settings"
