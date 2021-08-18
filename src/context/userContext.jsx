@@ -10,6 +10,7 @@ export const UserDataProvider = (props) => {
   const [user, setUser] = useState();
   const [loadingUser, setLoadingUser] = useState(true);
   const [authError, setAuthError] = useState(false);
+  const [status, setStatus] = useState(false);
   useEffect(() => {
     validateUser();
   }, []);
@@ -28,19 +29,18 @@ export const UserDataProvider = (props) => {
     const res = await httpGetMain(`merchant/get_user`);
     if (res) {
       if (res?.er) {
-        setLoadingUser(false);
         setAuthError(true);
         return;
       }
       console.log(res);
       setAuthError(false);
-      setLoadingUser(false);
       setUser(res.data);
+      setLoadingUser(false);
     }
   };
 
   return (
-    <UserDataContext.Provider value={{ user, loadingUser }}>
+    <UserDataContext.Provider value={{ user, loadingUser, setStatus, status }}>
       {props.children}
     </UserDataContext.Provider>
   );

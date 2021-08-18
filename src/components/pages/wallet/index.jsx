@@ -22,7 +22,7 @@ import { NotificationManager } from "react-notifications";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { hideLoader, showLoader } from "../../helpers/loader";
-import Swal from "sweetalert";
+import swal from "sweetalert";
 import { dateFormater } from "../../helpers/dateFormater";
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -138,7 +138,11 @@ const AgentDashboard = () => {
       if (res.er) {
         return NotificationManager.error(res.er.message);
       }
-      Swal("Success", "Settlement created successfully.");
+      swal({
+        title: "Success",
+        text: "Settlement created successfully.",
+        icon: "success",
+      });
       getTransaction(res.data.pendingSettlement.walletId);
       toggleModal();
     }

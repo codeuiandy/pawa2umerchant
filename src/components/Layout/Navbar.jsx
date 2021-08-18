@@ -16,7 +16,7 @@ export default function Navbar({
   pageName,
 }) {
   const { appReduceSidebarWidth } = useContext(LayoutContext);
-  const { user } = useContext(UserDataContext);
+  const { user, setStatus, status } = useContext(UserDataContext);
   useEffect(() => {}, []);
 
   return (
@@ -82,7 +82,16 @@ export default function Navbar({
               </div>
               <div className="navbar-right-content align-items-center d-flex">
                 <div className="appModeSet">
-                  <button>Live mode - ON</button>
+                  <button
+                    onClick={() => setStatus(!status)}
+                    style={
+                      status == false
+                        ? { border: "1px solid red", color: "red" }
+                        : {}
+                    }
+                  >
+                    Live mode - {status == true ? "ON" : "OFF"}
+                  </button>
                 </div>
                 <BellIcon />
                 <img src={user ? pic : pic} alt="" />

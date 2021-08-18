@@ -19,12 +19,19 @@ const useStyles = makeStyles((theme) => ({
     width: "420px",
   },
 }));
-const Profile = () => {
+const Profiles = ({
+  profile,
+  setProfile,
+  updatProfile,
+  setpassword,
+  password,
+  updatPassword,
+  ToggleModalPass,
+  OpenChangePassword,
+  setOpenChangePassword,
+}) => {
   const classes = useStyles();
-  const [OpenChangePassword, setOpenChangePassword] = useState(false);
-  const ToggleModal = () => {
-    setOpenChangePassword(!OpenChangePassword);
-  };
+
   return (
     <div>
       <div className="profileWrap">
@@ -33,23 +40,41 @@ const Profile = () => {
           <div className="inputWrapPpPawa">
             <div className="inputWrapMainPawa">
               <label htmlFor="">First Name </label>
-              <input type="text" />
+              <input
+                type="text"
+                value={profile.firstName}
+                onChange={({ target }) =>
+                  setProfile({ ...profile, firstName: target.value })
+                }
+              />
             </div>
 
             <div className="inputWrapMainPawa">
               <label htmlFor="">Last Name </label>
-              <input type="text" />
+              <input
+                type="text"
+                value={profile.lastName}
+                onChange={({ target }) =>
+                  setProfile({ ...profile, lastName: target.value })
+                }
+              />
             </div>
           </div>
           <div className="inputWrapPpPawa">
             <div className="inputWrapMainPawa">
               <label htmlFor="">Email Address </label>
-              <input type="text" />
+              <input type="text" value={profile.email} disabled />
             </div>
 
             <div className="inputWrapMainPawa">
               <label htmlFor="">Phone Number</label>
-              <input type="text" />
+              <input
+                type="text"
+                value={profile.phoneNumber}
+                onChange={({ target }) =>
+                  setProfile({ ...profile, phoneNumber: target.value })
+                }
+              />
             </div>
           </div>
           <div className="technicalSkillPpawa">
@@ -59,19 +84,19 @@ const Profile = () => {
 
           <div className="changepassPawa2u">
             <p>Password</p>{" "}
-            <button onClick={ToggleModal}>Change Password</button>
+            <button onClick={ToggleModalPass}>Change Password</button>
           </div>
         </form>
       </div>
       <div className="saveChangesBtn">
-        <button>Save and continue</button>
+        <button onClick={updatProfile}>Save and continue</button>
       </div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={OpenChangePassword}
-        onClose={ToggleModal}
+        onClose={ToggleModalPass}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -83,7 +108,7 @@ const Profile = () => {
             <div
               className="cancelModalIcon"
               style={{ cursor: "pointer" }}
-              onClick={ToggleModal}
+              onClick={ToggleModalPass}
             >
               <ClearIcon />
             </div>
@@ -102,20 +127,34 @@ const Profile = () => {
                 <div className="inputWrapPpPawa">
                   <div className="inputWrapMainPawa" style={{ width: "100%" }}>
                     <label htmlFor="">Old password </label>
-                    <input type="text" style={{ width: "100%" }} />
+                    <input
+                      type="password"
+                      style={{ width: "100%" }}
+                      onChange={({ target }) =>
+                        setpassword({ ...password, current: target.value })
+                      }
+                    />
                   </div>
                 </div>
 
                 <div className="inputWrapPpPawa">
                   <div className="inputWrapMainPawa" style={{ width: "100%" }}>
                     <label htmlFor="">New password </label>
-                    <input type="text" style={{ width: "100%" }} />
+                    <input
+                      type="password"
+                      style={{ width: "100%" }}
+                      onChange={({ target }) =>
+                        setpassword({ ...password, newPass: target.value })
+                      }
+                    />
                   </div>
                 </div>
               </form>
             </div>
             <div className="saveChangesBtn">
-              <button style={{ width: "100%" }}>Reset</button>
+              <button style={{ width: "100%" }} onClick={updatPassword}>
+                Reset
+              </button>
             </div>
           </div>
         </Fade>
@@ -124,4 +163,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profiles;
