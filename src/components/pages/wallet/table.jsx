@@ -102,7 +102,7 @@ export default function UserTransationTable({
             date: dateFormater(data.createdAt),
           };
         })}
-        // title={`User Management`}
+        title={`Wallet`}
       />
     </div>
   );

@@ -4,8 +4,12 @@ import MaterialTable, { Column } from "material-table";
 import { capitalize, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
 // import FormatDate from "../../../helpers/formatDate";
+import { dateFormater } from "../../helpers/dateFormater";
 
-export default function UserTransationTable() {
+export default function UserTransationTable({
+  transations,
+  singleTransationDetails,
+}) {
   const getUsers = [
     {
       reference: "ID: 22739",
@@ -61,37 +65,45 @@ export default function UserTransationTable() {
 
           { title: "Amount", field: "amount" },
 
-          {
-            title: "Service (filterable)",
-            field: "service",
-          },
+          //   {
+          //     title: "Service (filterable)",
+          //     field: "service",
+          //   },
           {
             title: "Status (filterable)",
             field: "status",
           },
           { title: "Date", field: "date" },
         ]}
-        data={getUsers?.map((data) => {
+        data={transations?.map((data) => {
           return {
-            reference: capitalize(data.reference),
-            customer: capitalize(data.customer),
-            amount: data.amount,
+            reference: (
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => singleTransationDetails(data)}
+              >
+                {capitalize(data.reference)}
+              </div>
+            ),
+            customer: `${data?.firstName} ${data?.lastName}`,
+            amount: `NGN ${data.amount}`,
             service: data.service,
             status: (
               <div
                 style={
-                  data.status == "Failed"
+                  data.status == "pending"
                     ? { color: "#F16063" }
                     : { color: "#66CB9F" }
                 }
               >
-                {data.status}
+                {capitalize(data.status)}
               </div>
             ),
-            date: data.date,
+            date: dateFormater(data.createdAt),
           };
         })}
-        // title={`User Management`}
+        title={`Transactions
+        `}
       />
     </div>
   );

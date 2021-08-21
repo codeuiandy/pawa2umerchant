@@ -6,11 +6,11 @@ import "react-circular-progressbar/dist/styles.css";
 import Navigation from "./navigation";
 import AgentDashboard from "./agentDashboard";
 
-const Dashboard = () => {
+const Dashboard = ({ history }) => {
   return (
     <>
       {/* <Navigation page="Dashboard" /> */}
-      <AgentDashboard />
+      <AgentDashboard history={history} />
     </>
   );
 };

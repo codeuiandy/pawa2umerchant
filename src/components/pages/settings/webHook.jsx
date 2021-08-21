@@ -1,40 +1,26 @@
 import React from "react";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-const Webhooks = () => {
+const Webhooks = ({ status }) => {
   return (
     <div>
-      <div className="profileWrap">
+      <div className="profileWrap" style={{ width: "500px" }}>
         <form action="">
-          <p className="pagenameProflPawa">API Configuration - Live mode</p>
+          <p className="pagenameProflPawa">
+            API Configuration - {status ? "Live" : "Demo"} mode
+          </p>
           <div className="inputWrapPpPawa">
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Secret Key </label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Public Key </label>
-              <input type="text" />
+            <div className="inputWrapMainPawa" style={{ width: "100%" }}>
+              <label htmlFor=""> {status ? "Live" : "Demo"} Secret Key </label>
+              <input type="text" style={{ width: "100%" }} />
               <div className="copyToClipSett">
                 <FileCopyIcon />
               </div>
             </div>
           </div>
-          <div className="inputWrapPpPawa">
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Callback URL </label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Webhook URL</label>
-              <input type="text" />
+          <div className="inputWrapPpPawa" style={{ width: "100%" }}>
+            <div className="inputWrapMainPawa" style={{ width: "100%" }}>
+              <label htmlFor="">{status ? "Live" : "Demo"} Webhook URL</label>
+              <input type="text" style={{ width: "100%" }} />
               <div className="copyToClipSett">
                 <FileCopyIcon />
               </div>
@@ -43,45 +29,6 @@ const Webhooks = () => {
         </form>
       </div>
 
-      <div className="profileWrap">
-        <form action="">
-          <p className="pagenameProflPawa">API Configuration - Test mode</p>
-          <div className="inputWrapPpPawa">
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Secret Key </label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Public Key </label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-          </div>
-          <div className="inputWrapPpPawa">
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Callback URL </label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-
-            <div className="inputWrapMainPawa">
-              <label htmlFor="">Live Webhook URL</label>
-              <input type="text" />
-              <div className="copyToClipSett">
-                <FileCopyIcon />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
       <div className="saveChangesBtn" style={{ marginBottom: "40px" }}>
         <button>Save and continue</button>
       </div>

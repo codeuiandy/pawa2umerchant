@@ -12,8 +12,8 @@ import Dashboard from "./components/pages/dashboard/dashboard";
 import Transactions from "./components/pages/Transactions/index";
 import ForgotPassword from "./components/pages/auth/forgotPassword";
 import ForgotPasswordMain from "./components/pages/auth/resetPasswordMain";
-import Settings from './components/pages/settings/index'
-import Wallet from './components/pages/wallet/index'
+import Settings from "./components/pages/settings/index";
+import Wallet from "./components/pages/wallet/index";
 import Demo from "./demo";
 
 const SiteRouter = () => {
@@ -44,20 +44,19 @@ const SiteRouter = () => {
               pageName="Transactions"
             />
 
-<DefaultLayoutRoute
+            <DefaultLayoutRoute
               exact
               path="/Wallet"
               component={Wallet}
               pageName="Wallet"
             />
-            
-              <DefaultLayoutRoute
+
+            <DefaultLayoutRoute
               exact
               path="/settings"
               component={Settings}
               pageName="Settings"
             />
-           
           </LayoutProvider>
         </UserDataProvider>
       </Switch>

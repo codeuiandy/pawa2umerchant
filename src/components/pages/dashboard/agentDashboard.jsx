@@ -15,9 +15,30 @@ import {
 import { UserDataContext } from "../../../context/userContext";
 import { capitalize } from "@material-ui/core";
 import { ClipLoader } from "react-spinners";
+import { httpGetMain } from "../../../helpers/httpMethods";
+import { NotificationManager } from "react-notifications";
+import { hideLoader, showLoader } from "../../helpers/loader";
 
-const AgentDashboard = () => {
+const AgentDashboard = ({ history }) => {
   const { user, loadingUser } = useContext(UserDataContext);
+  const [wallet, setWallet] = useState({});
+
+  useEffect(() => {
+    getWallet();
+  }, []);
+
+  const getWallet = async () => {
+    showLoader();
+    let res = await httpGetMain(`merchant/wallet`);
+    if (res) {
+      hideLoader();
+      if (res.er) {
+        return NotificationManager.error(res.er.message);
+      }
+
+      setWallet(res.data.wallet);
+    }
+  };
   return (
     <>
       <div>
@@ -40,7 +61,7 @@ const AgentDashboard = () => {
               className="greeting"
               style={{ marginBottom: "10px !important" }}
             >
-              Hi, {user ? capitalize(user.firstName) : ""}
+              {user ? capitalize(user.firstName) : ""}
             </h3>
             <div className="charts">
               <div className="top">
@@ -103,9 +124,11 @@ const AgentDashboard = () => {
                     Balance
                   </h3>
                   <div className="dashboardBalance">
-                    <h2>N105.55</h2>
-                    <button>History</button>
-                    <button>Top up Balance</button>
+                    <h2>{`${wallet?.currency} ${wallet?.balAmount}`}</h2>
+                    <button onClick={() => history.push("/wallet")}>
+                      History
+                    </button>
+                    {/* <button>Top up Balance</button> */}
                   </div>
                 </div>
                 {/* <ProgressBar title="Complaints" value={10} color={"#000080"} />

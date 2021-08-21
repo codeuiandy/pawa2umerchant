@@ -81,7 +81,7 @@ export default function TeamsTable() {
             action: data.date,
           };
         })}
-        // title={`User Management`}
+        title={`Teams`}
       />
     </div>
   );

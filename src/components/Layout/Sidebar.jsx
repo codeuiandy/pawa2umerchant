@@ -167,7 +167,7 @@ export default function Sidebar({ browserRouter, currentRoute }) {
             Balance
           </li>
 
-          <li
+          {/* <li
             style={
               currentRoute === "/more"
                 ? { color: "#e3b451" }
@@ -185,7 +185,7 @@ export default function Sidebar({ browserRouter, currentRoute }) {
               />
             </span>
             Notificatons
-          </li>
+          </li> */}
 
           <li
             style={

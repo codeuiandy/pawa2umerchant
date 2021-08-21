@@ -11,7 +11,7 @@ import swal from "sweetalert";
 import { NotificationManager } from "react-notifications";
 import { httpPatchMain } from "../../../helpers/httpMethods";
 export default function Index() {
-  const { user, loadingUser } = useContext(UserDataContext);
+  const { user, loadingUser, status } = useContext(UserDataContext);
   const [activeTab, setActive] = useState("profile");
   const [profile, setProfile] = useState({
     firstName: "",
@@ -179,7 +179,7 @@ export default function Index() {
             )}
             {activeTab == "Services" ? <Services /> : ""}
             {activeTab == "Teams" ? <Teams /> : ""}
-            {activeTab == "Webhooks" ? <Webhooks /> : ""}
+            {activeTab == "Webhooks" ? <Webhooks status={status} /> : ""}
           </div>
         </div>
       )}
