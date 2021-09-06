@@ -134,7 +134,9 @@ export default function Index() {
             <ul>
               <li
                 onClick={() => setActive("profile")}
-                className={`${profile == "profile" ? "activeTabSettings" : ""}`}
+                className={`${
+                  activeTab == "profile" ? "activeTabSettings" : ""
+                }`}
               >
                 <span>Profile</span>
               </li>

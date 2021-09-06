@@ -21,7 +21,7 @@ import { hideLoader, showLoader } from "../../helpers/loader";
 
 const AgentDashboard = ({ history }) => {
   const { user, loadingUser } = useContext(UserDataContext);
-  const [wallet, setWallet] = useState({});
+  const [wallet, setWallet] = useState({ currency: "", balAmount: "" });
 
   useEffect(() => {
     getWallet();

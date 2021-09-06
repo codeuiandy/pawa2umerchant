@@ -48,7 +48,7 @@ const AgentDashboard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
   const [openModal3, setOpenModal3] = useState(false);
-  const [wallet, setWallet] = useState({});
+  const [wallet, setWallet] = useState({ currency: "", balAmount: "" });
   const [banks, setbanks] = useState([]);
   const [transations, setTransactions] = useState([]);
   const [Stransations, setSTransactions] = useState({});
