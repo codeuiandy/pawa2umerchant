@@ -63,7 +63,7 @@ const SiteRouter = () => {
     </BrowserRouter>
   );
 };
-
+// accept_invite/:id
 function App(props) {
   //DisableInspect()
   return (

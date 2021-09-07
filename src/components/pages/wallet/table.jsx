@@ -61,7 +61,7 @@ export default function UserTransationTable({
             field: "reference",
           },
 
-          { title: "Customer name", field: "customer" },
+          // { title: "Customer name", field: "customer" },
 
           { title: "Amount", field: "amount" },
 

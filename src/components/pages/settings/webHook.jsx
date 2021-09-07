@@ -1,6 +1,6 @@
 import React from "react";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-const Webhooks = ({ status }) => {
+const Webhooks = ({ status, secretKey }) => {
   return (
     <div>
       <div className="profileWrap" style={{ width: "500px" }}>
@@ -11,7 +11,7 @@ const Webhooks = ({ status }) => {
           <div className="inputWrapPpPawa">
             <div className="inputWrapMainPawa" style={{ width: "100%" }}>
               <label htmlFor=""> {status ? "Live" : "Demo"} Secret Key </label>
-              <input type="text" style={{ width: "100%" }} />
+              <input type="text" style={{ width: "100%" }} value={secretKey} />
               <div className="copyToClipSett">
                 <FileCopyIcon />
               </div>

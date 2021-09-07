@@ -5,38 +5,7 @@ import { capitalize, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
 // import FormatDate from "../../../helpers/formatDate";
 
-export default function TeamsTable() {
-  const getUsers = [
-    {
-      customer: "Okeke Andrew",
-      amount: "bill.sanders@example.com",
-      service: "Admin",
-      status: "Enabled",
-      date: "Change role",
-    },
-    {
-      customer: "Okeke Andrew",
-      amount: "bill.sanders@example.com",
-      service: "Admin",
-      status: "Disabled",
-      date: "Change role",
-    },
-    {
-      customer: "Okeke Andrew",
-      amount: "bill.sanders@example.com",
-      service: "Admin",
-      status: "Enabled",
-      date: "Change role",
-    },
-
-    {
-      customer: "Okeke Andrew",
-      amount: "bill.sanders@example.com",
-      service: "Admin",
-      status: "Disabled",
-      date: "Change role",
-    },
-  ];
+export default function TeamsTable({ team, editUser }) {
   return (
     <div classaction="table-wrap border styleTable">
       <MaterialTable
@@ -62,23 +31,25 @@ export default function TeamsTable() {
           },
           { title: "Action", field: "action" },
         ]}
-        data={getUsers?.map((data) => {
+        data={team?.map((data) => {
           return {
-            customer: capitalize(data.customer),
-            email: data.amount,
-            Roles: data.service,
+            customer: `${capitalize(data?.user?.firstName)} ${capitalize(
+              data?.user?.lastName
+            )}`,
+            email: data?.user?.email,
+            Roles: data?.user?.role?.name,
             status: (
               <div
                 style={
-                  data.status == "Disabled"
+                  data?.status == "pending"
                     ? { color: "#F16063" }
                     : { color: "#66CB9F" }
                 }
               >
-                {data.status}
+                {data?.status}
               </div>
             ),
-            action: data.date,
+            action: <div onClick={() => editUser("edit", data)}>Edit</div>,
           };
         })}
         title={`Teams`}
