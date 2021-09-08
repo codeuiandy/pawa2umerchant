@@ -85,7 +85,7 @@ export default function UserTransationTable({
                 {capitalize(data.reference)}
               </div>
             ),
-            customer: `${data?.firstName} ${data?.lastName}`,
+            customer: `${data.customerName}`,
             amount: `NGN ${data.amount}`,
             service: data.service,
             status: (
@@ -96,7 +96,7 @@ export default function UserTransationTable({
                     : { color: "#66CB9F" }
                 }
               >
-                {capitalize(data.status)}
+                {data?.status}
               </div>
             ),
             date: dateFormater(data.createdAt),
@@ -108,3 +108,17 @@ export default function UserTransationTable({
     </div>
   );
 }
+
+// amount: "125000"
+// bank: null
+// createdAt: "2021-09-08T14:29:31.834Z"
+// customerEmail: null
+// customerId: null
+// customerName: "Lanre Seye"
+// id: "d853925e-d6a1-4fd2-ab6c-b01434002a10"
+// orderId: "6c2bff04-ca04-48cd-840b-d5fd4f8b729b"
+// paymentStatus: "pending"
+// reference: "order106969"
+// transactionId: "659160"
+// updatedAt: "2021-09-08T14:29:31.834Z"
+// userId: "ac1300ab-4e07-4eb7-854c-8869d4cedf5f

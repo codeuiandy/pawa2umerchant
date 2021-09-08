@@ -61,6 +61,7 @@ const AgentDashboard = () => {
   });
   useEffect(() => {
     getWallet();
+    getTransaction();
   }, []);
 
   const getWallet = async () => {
@@ -78,13 +79,13 @@ const AgentDashboard = () => {
 
   const getTransaction = async (id) => {
     showLoader();
-    let res = await httpGetMain(`merchant/wallet_history/${id}`);
+    let res = await httpGetMain(`merchant/transactions`);
     if (res) {
       hideLoader();
       if (res.er) {
         return NotificationManager.error(res.er.message);
       }
-      setTransactions(res.data.histories);
+      setTransactions(res.data.transactions);
     }
   };
 
@@ -143,7 +144,7 @@ const AgentDashboard = () => {
         text: "Settlement created successfully.",
         icon: "success",
       });
-      getTransaction(res.data.pendingSettlement.walletId);
+
       toggleModal();
     }
   };

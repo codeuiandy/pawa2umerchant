@@ -15,17 +15,27 @@ import {
 import { UserDataContext } from "../../../context/userContext";
 import { capitalize } from "@material-ui/core";
 import { ClipLoader } from "react-spinners";
-import { httpGetMain } from "../../../helpers/httpMethods";
+import { httpGet, httpGetMain } from "../../../helpers/httpMethods";
 import { NotificationManager } from "react-notifications";
 import { hideLoader, showLoader } from "../../helpers/loader";
 
 const AgentDashboard = ({ history }) => {
   const { user, loadingUser } = useContext(UserDataContext);
   const [wallet, setWallet] = useState({ currency: "", balAmount: "" });
-
+  const [appCards, setAppCards] = useState({
+    totalAmountToBeSettled: "",
+    totalSettlements: "",
+  });
   useEffect(() => {
     getWallet();
+    // getMarchants();
   }, []);
+
+  useEffect(() => {
+    if (loadingUser == false) {
+      getMarchants(user.company.id);
+    }
+  }, [loadingUser]);
 
   const getWallet = async () => {
     showLoader();
@@ -37,6 +47,21 @@ const AgentDashboard = ({ history }) => {
       }
 
       setWallet(res.data.wallet);
+    }
+  };
+
+  const getMarchants = async (id) => {
+    let res = await httpGet(`merchant/transaction_summary/${id}`);
+    if (res) {
+      if (res.er) {
+        return;
+      }
+      console.log(res);
+      // setMarchants(res.data.merchants);
+      setAppCards({
+        totalAmountToBeSettled: res.data.totalAmountToBeSettled,
+        totalSettlements: res.data.totalSettlements,
+      });
     }
   };
   return (
